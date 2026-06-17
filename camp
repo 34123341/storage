@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# cmake oriented project builder
+
+VERSION="0.0.1"
+
+function _usage() {
+  printf "\n[usage]: camp [options]\n\n"
+}
+
+function _project() {
+  mkdir "$2" # FIXME:
+}
+
+main() {
+  while true; do
+    case $1 in
+    -p)
+      _project
+      exit 1
+      ;;
+    *)
+      _usage
+      exit 1
+      ;;
+    esac
+  done
+}
+main "$@"
